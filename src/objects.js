@@ -7,10 +7,17 @@
 * It should be returned directly by the following function
 * @return {object} - the object literal
 */
+var goldfish = {
+	type: "Goldfish",
+	brand: "Pepperidge Farm",
+	flavor: "Cheddar",
+	count: 2000,
+	returnObjectLiteral: function(){
+		return this.type + ' ' + this.brand + ' ' + this.flavor + ' ' + this.count + '.';
+	}
 
-function returnObjectLiteral() {
-  //your code here
-  return undefined; //Modify ONLY this line
+function returnObjectLiteral(type, brand, flavor, count) {
+	 //Modify ONLY this line
   //end your code
 }
 
@@ -36,6 +43,19 @@ function returnObjectLiteral() {
 * totalReceived() - returns an integer indicating the total number of messages
 * received
 */
+
+
+function MessageLog(user, messageText, direction){
+	this.user = user;
+	this.messageText = messageText;
+	this.direction = direction;
+	this.getSentMessage = sending;
+}
+var logMessage = new MessageLog;
+
+function sending(){
+	if(logmessage.)
+}
 
 //your code here
 
