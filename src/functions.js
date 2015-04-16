@@ -11,13 +11,39 @@
 * It should return the null value.
 * @return {null} - 'useless'.
 */
+function string(astring){
+
+	return astring;
+}
+
+function uselessFunction(){
+
+	return null;
+}
 
 //your code here
 
 //end your code
 
-var bar = 'not a function';
-var barType = typeof bar;
+
+
+function(){
+
+	var bar = 'not a function';
+	var barType = typeof bar;
+
+	float doubleArray[];
+	var term = 2;
+	for(var i=0; i<doubleArray.length; i++){
+		doubleArray[i] *= 2;
+	}
+
+	/*float doubleArray[];
+	float newdoublearray[] = doubleArray * 2;
+	doubleArray = newdoublearray;
+	*/
+
+}
 
 /**
 * Assign the above variable 'bar' to an anonymous function with the following
@@ -45,6 +71,7 @@ function GitLog(hash, date, message) {
     this.date = date;
     this.message = message;
 }
+var myGitLog = new GitLog("The has is ....", 04/17/2015, "My message is ...");
 
 /**
 * Create a function called parseGit to parse Git commit logs
