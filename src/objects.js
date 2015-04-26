@@ -7,16 +7,10 @@
 * It should be returned directly by the following function
 * @return {object} - the object literal
 */
-var goldfish = {
-	type: "Goldfish",
-	brand: "Pepperidge Farm",
-	flavor: "Cheddar",
-	count: 2000,
-	returnObjectLiteral: function(){
-		return this.type + ' ' + this.brand + ' ' + this.flavor + ' ' + this.count + '.';
-	}
 
-function returnObjectLiteral(type, brand, flavor, count) {
+
+function returnObjectLiteral() {
+	return{type: 'Goldfish', brand: 'Pepperidge Farm', flavor: 'Cheddar', count: 2000};
 	 //Modify ONLY this line
   //end your code
 }
@@ -45,17 +39,30 @@ function returnObjectLiteral(type, brand, flavor, count) {
 */
 
 
-function MessageLog(user, messageText, direction){
+function MessageLog(user){
 	this.user = user;
-	this.messageText = messageText;
-	this.direction = direction;
-	this.getSentMessage = sending;
-}
-var logMessage = new MessageLog;
+	this.totalSent = 0;
+	this.totalReceived = 0;
+	this.sentMessage = [];
+	this.logMessage = function(messageText,direction){
+		if(direction===0){
+			this.totalSent += 1;
+		}
 
-function sending(){
-	if(logmessage.)
+		if(direction===1){
+			this.totalReceived += 1;
+		}
+	};
+
+	function totalS(){
+		return this.totalSent;
+	}
+	function totalR(){
+		return this.totalReceived;
+	}
+
 }
+
 
 //your code here
 
@@ -68,6 +75,10 @@ function sending(){
 */
 //your code here
 
+MessageLog.prototype.lastReceivedMessage = function(){
+	return this.messageReceived;
+};
+
 //end your code
 
 /**
@@ -77,5 +88,11 @@ function sending(){
 */
 
 //your code here
+
+var myLog = new MessageLog("BlackHatGuy"){
+	myLog.logMessage("foo", 1);
+	myLog.logMessage("bar", 1);
+	myLog.logMessage("baz", 1);
+};
 
 //end your code
