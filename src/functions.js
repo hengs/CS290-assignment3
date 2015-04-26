@@ -11,10 +11,6 @@
 * It should return the null value.
 * @return {null} - 'useless'.
 */
-function string(astring){
-
-	return astring;
-}
 
 function uselessFunction(){
 
@@ -23,27 +19,14 @@ function uselessFunction(){
 
 //your code here
 
+var bar = 'not a function';
+var barType = typeof bar;
+
 //end your code
 
 
 
-function(){
 
-	var bar = 'not a function';
-	var barType = typeof bar;
-
-	float doubleArray[];
-	var term = 2;
-	for(var i=0; i<doubleArray.length; i++){
-		doubleArray[i] *= 2;
-	}
-
-	/*float doubleArray[];
-	float newdoublearray[] = doubleArray * 2;
-	doubleArray = newdoublearray;
-	*/
-
-}
 
 /**
 * Assign the above variable 'bar' to an anonymous function with the following
@@ -56,7 +39,18 @@ function(){
 */
 
 //your code here
+function(){
 
+  var doubleArray = new Array();
+  var doubleArray1 = new Array();
+  
+  for(var i=0; i<doubleArray.length; i++){
+    doubleArray1[i]=doubleArray[i*2];
+    if (doubleArray1[i]==doubleArray[i*2])
+      return true;
+    else
+      return false;
+  }}
 //end your code
 
 /**
@@ -71,7 +65,7 @@ function GitLog(hash, date, message) {
     this.date = date;
     this.message = message;
 }
-var myGitLog = new GitLog("The has is ....", 04/17/2015, "My message is ...");
+
 
 /**
 * Create a function called parseGit to parse Git commit logs
@@ -93,5 +87,24 @@ var myGitLog = new GitLog("The has is ....", 04/17/2015, "My message is ...");
 */
 
 //your code here
+function parseGit(logArray){
+  var finalLog = [];
+  for(var i = 0; logArray.length; i++){
 
+    // parse entire string of log with white spaces split up
+    var templog = logArray[i].split(" ");
+    //hash is first split
+    var hash = templog[0];
+    var whitespace = " ";
+    //date is the six spaces added together;
+    var date_string = templog[1] + whitespace + templog[2] + whitespace + templog[3]+ whitespace +templog[4] + whitespace + templog[5] + whitespace + templog[6] + whitespace;
+    //message is the final temp log at index array 7
+    var message = templog[7];
+
+    //entered in the final log
+    finalLog[i] = new GitLog(hash, new Date(date_string), message);
+  }
+  return finalLog;
+  
+}
 //end your code
