@@ -12,21 +12,14 @@
 * @return {null} - 'useless'.
 */
 
-function uselessFunction(){
-
-	return null;
-}
-
 //your code here
+function uselessFunction(){
+  return null;
+}
+//end your code
 
 var bar = 'not a function';
 var barType = typeof bar;
-
-//end your code
-
-
-
-
 
 /**
 * Assign the above variable 'bar' to an anonymous function with the following
@@ -39,18 +32,15 @@ var barType = typeof bar;
 */
 
 //your code here
-function(){
-
-  var doubleArray = new Array();
-  var doubleArray1 = new Array();
-  
-  for(var i=0; i<doubleArray.length; i++){
-    doubleArray1[i]=doubleArray[i*2];
-    if (doubleArray1[i]==doubleArray[i*2])
-      return true;
-    else
-      return false;
-  }}
+bar = function (doubleArray) { 
+    for (var i = 0; i < doubleArray.length; i++) {
+        if (typeof doubleArray[i] !== 'number') {
+            return false;
+        }
+        doubleArray[i] = 2 * doubleArray[i];
+    }
+    return true;
+}
 //end your code
 
 /**
@@ -89,7 +79,7 @@ function GitLog(hash, date, message) {
 //your code here
 function parseGit(logArray){
   var finalLog = [];
-  for(var i = 0; logArray.length; i++){
+  for(var i = 0; i < logArray.length; i++){
 
     // parse entire string of log with white spaces split up
     var templog = logArray[i].split(" ");
@@ -97,7 +87,7 @@ function parseGit(logArray){
     var hash = templog[0];
     var whitespace = " ";
     //date is the six spaces added together;
-    var date_string = templog[1] + whitespace + templog[2] + whitespace + templog[3]+ whitespace +templog[4] + whitespace + templog[5] + whitespace + templog[6] + whitespace;
+    var date_string = templog[1] + whitespace + templog[2] + whitespace + templog[3]+ whitespace +templog[4] + whitespace + templog[5] + whitespace + templog[6];
     //message is the final temp log at index array 7
     var message = templog[7];
 
