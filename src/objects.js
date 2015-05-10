@@ -48,16 +48,18 @@ function MessageLog(user) {
 
     this.logMessage = function(messageText, direction){
         if(direction === 0){
+            this.sent++;
         	//add element to beginning of array
             this.messagesSent.unshift(messageText);
             //keep only five max in the array
             this.messagesSent = this.messagesSent.slice(0,5);
-            this.sent++;
+            
         }
         if(direction === 1){
+            this.received++;
             this.messagesReceived.unshift(messageText);
             this.messagesReceived = this.messagesReceived.slice(0,5);
-            this.received++;
+            
         }
     };
 
